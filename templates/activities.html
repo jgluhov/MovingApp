@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3>Активность расчета стоимости услуг</h3>
+        <div ng-if="$storage.movements.length === 0">
+          <p>Расчетов пока не было произведено</p>
+        </div>
+        <table class="table" ng-if="$storage.movements.length > 0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Откуда</th>
+              <th>Куда</th>
+              <th>Время</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="movement in $storage.movements track by $index">
+              <td ng-bind="$index"></td>
+              <td ng-bind="movement.from"></td>
+              <td ng-bind="movement.to"></td>
+              <td ng-bind="movement.time"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3>Активность заказов</h3>
+        <div ng-if="$storage.orders.length === 0">
+          <p>Расчетов пока не было произведено</p>
+        </div>
+        <table class="table" ng-if="$storage.orders.length > 0">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Имя</th>
+            <th>Телефон</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="order in $storage.orders">
+              <td ng-bind="$index"></td>
+              <td ng-bind="order.name"></td>
+              <td ng-bind="order.phone"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

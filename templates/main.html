@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-xs-12 col-md-5">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3>Рассчитать стоимость услуг</h3>
+        <p>Подать машину через</p>
+        <form ng-submit="onSubmit(move)" ng-controller="CalculateController">
+          <div class="form-group">
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" ng-model="movement.time" id="time-15" value="15"> 15 мин
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" ng-model="movement.time" id="time-30" value="30"> 30 мин
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" ng-model="movement.time" id="time-60" value="60"> 1 час
+            </label>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="move-from"></label>
+            <input type="text" class="form-control" id="move-from" ng-model="movement.from" placeholder="Откуда">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="move-to"></label>
+            <input type="text" class="form-control" id="move-to" ng-model="movement.to" placeholder="Куда">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default">Получить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6"></div>
+  <div class="col-md-6">
+    <article>
+      <h3>Легкий переезд</h3>
+      <p>Жизнь в больших городах очень динамична. Ежедневно в Санкт-Петербурге в Ленинградской области
+        происходят сотни переездов - квартирныйх, дачных, офисных. Переезжают магазины, склады и целые
+        предприятия. И каждый из переездов - это стресс, связанный с необходимостью решения множества задач.</p>
+      <p>Доверьте организацию перездов нам - забудьте о существовании проблем.</p>
+      <a href="#">Подробнее</a>
+    </article>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3 class="text-center">Закажите грузовое такси прямо сейчас</h3>
+        <p class="text-center">Мы перезвоним вам в течении 3-х секунд!</p>
+        <div class="row">
+          <form ng-submit="onSubmit(orderForm)" ng-controller="OrderController" novalidate name="orderForm">
+            <div class="col-xs-12 col-md-6 form-group">
+              <input type="text" class="form-control" ng-model="order.name" placeholder="Ваше имя">
+            </div>
+            <div class="col-xs-12 col-md-6 form-group">
+              <input type="text" class="form-control" name="orderPhone" ng-model="order.phone"
+                     ng-pattern="/\d{3}-\d{3}-\d{4}/" placeholder="XXX-XXX-XXXX">
+            </div>
+            <div class="col-xs-12 form-group text-center">
+              <button type="submit" class="btn btn-default">Перезвоните мне</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

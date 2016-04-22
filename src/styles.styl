@@ -1,0 +1,84 @@
+bg-color = #f5f5f5
+panel-heading-bg-color = #ffffff
+panel-heading-border-color = #ffffff
+panel-border-color = #fed100
+button-bg-color = #fed100
+button-bg-hover-color = #f4c700
+form-input-border-color = #ececec
+form-input-border-color-focus = #cccccc
+text-danger-color = #DE5053
+panel-heading-color = #555655
+row-margin-bottom = 40px
+
+body
+  background-color bg-color
+  font-family Calibri, sans-serif
+
+.container
+  background-color white
+
+.navbar-default
+  background-color white
+  border-color white
+  .navbar-brand
+    font-family "Calibri Light", sans-serif
+    font-weight 600
+  .navbar-nav
+    > li
+      a
+        font-family "Calibri", sans-serif
+        font-weight 400
+        &:not(.navbar-brand)
+          font-size 16px
+          color panel-heading-color
+      &:hover
+        background-color button-bg-color
+
+article
+  margin-bottom row-margin-bottom
+  h3
+    font-size 24px
+    font-weight 600
+    color panel-heading-color
+  a
+    font-size 15px
+    text-transform uppercase
+    color text-danger-color
+    &:after
+      content '>'
+      margin-left 10px
+
+.panel-default
+  border 3px solid panel-border-color
+  > .panel-heading
+    font-weight 600
+    background-color panel-heading-bg-color
+    border-color panel-heading-border-color
+  > .panel-body
+    h3
+      font-size 24px
+      font-weight 600
+      color panel-heading-color
+    p
+      color text-danger-color
+
+.btn-default
+  background-color panel-border-color
+  text-transform uppercase
+  font-weight 400
+  border-radius 0
+
+  &:hover
+    background-color button-bg-hover-color
+
+.form-control
+  border none
+  border-radius 0
+  border-bottom 2px solid form-input-border-color
+  box-shadow none
+  &:focus
+    box-shadow none
+    border-color form-input-border-color-focus
+
+input.ng-dirty.ng-invalid
+  color text-danger-color
