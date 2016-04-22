@@ -15,21 +15,28 @@
         url: "/activities",
         templateUrl: "templates/activities.html"
       })
+      .state('light-moving', {
+        url: "/light-moving",
+        templateUrl: "templates/light-moving.html"
+      })
   });
 
   app.run(['$rootScope', '$sessionStorage',
     function ($rootScope, $sessionStorage) {
       $rootScope.$storage = $sessionStorage;
+
+      $rootScope.$storage.movements = $rootScope.$storage.movements || [];
+      $rootScope.$storage.orders = $rootScope.$storage.orders || [];
     }]);
 
   app.controller('CalculateController',
     ['$scope', '$rootScope', function ($scope, $rootScope) {
 
-      $rootScope.$storage.movements = $rootScope.$storage.movements || [];
-
       $scope.movement = {};
 
-      $scope.onSubmit = function () {
+      $scope.onSubmit = function (form) {
+        if(form.$invalid) return;
+
         $rootScope.$storage.movements.push(angular.copy($scope.movement));
         $scope.movement = {};
       }
@@ -38,9 +45,7 @@
 
   app.controller('OrderController',
     ['$scope', '$rootScope', function ($scope, $rootScope) {
-      
-      $rootScope.$storage.orders = $rootScope.$storage.orders || [];
-      
+
       $scope.order = {};
 
       $scope.onSubmit = function (form) {
