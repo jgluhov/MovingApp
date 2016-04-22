@@ -11,7 +11,6 @@ panel-heading-color = #555655
 row-margin-bottom = 40px
 
 body
-  background-color bg-color
   font-family "Calibri", sans-serif
 
 .container
@@ -114,18 +113,19 @@ input.ng-dirty.ng-invalid
   display inline-block
 
 .slider
+  margin-bottom 40px
   > .slider-title
     h3
       display inline-block
       font-size 24px
       font-weight 600
       color panel-heading-color
-      display inline-block
       margin-right 5px
+      margin-bottom 15px
 
     .slider-line
       background-color panel-border-color
-      width calc(100% - 230px)
+      width calc(100% - 250px)
       height 3px
       display inline-block
       position relative
@@ -138,3 +138,51 @@ input.ng-dirty.ng-invalid
       font-weight 600
       font-size 18px
       margin-left 5px
+
+  .slider-image
+    margin-bottom 5px
+
+  .slider-image-title
+    cursor pointer
+    text-transform uppercase
+    font-size 16px
+    font-weight 600
+    display inline-block
+    color panel-heading-color
+    margin-bottom 5px
+    &:hover
+      border-bottom 3px solid panel-border-color
+
+  .uk-slidenav-contrast
+    color button-bg-color
+    &:hover
+      color button-bg-color
+
+
+.image-help, .image-weight, .image-shop, .image-loading
+  background-image url(../images/Untitled-8.png)
+  background-repeat no-repeat
+
+.image-help
+  width: 120px
+  height 124px
+  background-position: 0px 0px
+  background-size cover
+
+.image-weight
+  width: 167px
+  height 124px
+  background-position: -365px 0px
+  background-size cover
+
+.image-shop
+  width: 167px
+  height 124px
+  background-position: -780px 0px
+  background-size cover
+
+.image-loading
+  width: 185px
+  height 124px
+  background-position: -1224px 0px
+  background-size cover

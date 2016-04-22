@@ -57,6 +57,32 @@
       
     }]);
 
+  app.directive('scrollbox', [function () {
+    
+    function link(scope, element, attrs) {
+
+    }
+    
+    return {
+      restrict: 'E',
+      link: link,
+      template: [
+        '<div class="uk-slidenav-position" data-uk-slider>',
+          '<div class="uk-slider-container">',
+            '<ul class="uk-slider uk-grid-width-small-1-2 uk-grid-width-medium-1-4 uk-grid-width-large-1-4">',
+              '<li><div class="slider-image image-help"></div><div class="slider-image-title">поможем с переездом</div></li>',
+              '<li><div class="slider-image image-weight"></div><div class="slider-image-title">перевезем груз</div></li>',
+              '<li><div class="slider-image image-shop"></div><div class="slider-image-title">заберем вас с грузом у магазина</div></li>',
+              '<li><div class="slider-image image-loading"></div><div class="slider-image-title">загрузим и разгрузим</div></li>',
+            '</ul>',
+          '</div>',
+          '<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous"></a>',
+          '<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next"></a>',
+        '</div>',
+      ].join('')
+    }
+  }]);
+
   angular.bootstrap(document, [app.name]);
 
 })(angular);
